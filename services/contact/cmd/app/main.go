@@ -1,17 +1,16 @@
 package main
 
 import (
-	"Contact_service/pkg/store/postgres"
+	"Contact_service/pkg/store/clickhouse"
 	"fmt"
 )
 
 func main() {
-	conn , err := postgres.New(postgres.Settings{})
+	conn, err := clickhouse.New(clickhouse.Settings{})
 	if err != nil {
 		panic(err)
 	}
 
-	defer conn.Pool.Close()
-	fmt.Println(conn.Pool.Stat())
-	fmt.Println("Hello")
+	defer conn.Conn.Close()
+	fmt.Println("Connection to ClickHouse established")
 }

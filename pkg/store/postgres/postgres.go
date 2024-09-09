@@ -10,7 +10,6 @@ import (
 	"github.com/jackc/pgx/v4/pgxpool"
 	_ "github.com/lib/pq"
 	"github.com/pkg/errors"
-	_ "github.com/spf13/viper/remote"
 )
 
 func init() {
